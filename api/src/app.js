@@ -5,6 +5,18 @@ const morgan = require('morgan');
 const routes = require('./routes/index.js');
 require('./db.js');
 const server = express();
+require('dotenv').config();
+const cloudinary = require('cloudinary').v2;
+
+
+// Configuración de Cloudinary 
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
+
+
 server.name = 'API';
 server.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
 server.use(bodyParser.json({ limit: '50mb' }));
