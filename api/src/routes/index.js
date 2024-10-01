@@ -10,6 +10,10 @@ const getProductos = require('../controllers/getControllers/getProductos');
 const postAdmin = require('../controllers/postControllers/postUsuario');
 const postProductos = require('../controllers/postControllers/postProductos');
 
+const updateProducto = require('../controllers/putController/updateProducto');
+const deleteProducto = require('../controllers/deleteController.js/deleteProducto');
+const recuperarProducto = require('../controllers/putController/recuperarProducto');
+
 // Crear el router
 const router = Router();
 
@@ -24,6 +28,15 @@ router.post('/admin', postAdmin);
 
 // Ruta para crear un nuevo producto
 router.post('/', postProductos);
+
+//Ruta para modificar producto
+router.put('/productos/:id', updateProducto);
+
+//Ruta para eliminar productos
+router.delete('/productos/:id', deleteProducto);
+
+//Ruta para recuperar producto eliminado
+router.put('/productos/recuperar/:id', recuperarProducto);
 
 
 

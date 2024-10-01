@@ -31,6 +31,9 @@ module.exports = (sequelize) => {
         key: 'id',         // Campo clave
       },
     },
+  }, {
+    paranoid: true,  // Habilitar borrado lógico
+    timestamps: true, // Manejo de createdAt y updatedAt
   });
 
   return Producto;
