@@ -13,9 +13,13 @@ const postProductos = require('../controllers/postControllers/postProductos');
 const updateProducto = require('../controllers/putController/updateProducto');
 const deleteProducto = require('../controllers/deleteController.js/deleteProducto');
 const recuperarProducto = require('../controllers/putController/recuperarProducto');
+const getUsuarios = require('../controllers/getControllers/getUsuarios');
 
 // Crear el router
 const router = Router();
+
+//Ruta para obtener usuarios
+router.get('/usuarios', getUsuarios);
 
 // Ruta para obtener productos
 router.get('/productos', getProductos);
