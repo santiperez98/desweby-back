@@ -9,9 +9,8 @@ const getProductoById = require('../controllers/getControllers/getProductosById'
 const getProductos = require('../controllers/getControllers/getProductos');
 const postAdmin = require('../controllers/postControllers/postUsuario');
 const postProductos = require('../controllers/postControllers/postProductos');
-
 const updateProducto = require('../controllers/putController/updateProducto');
-const deleteProducto = require('../controllers/deleteController.js/deleteProducto');
+const deleteProducto = require('../controllers/deleteController/deleteProducto');
 const recuperarProducto = require('../controllers/putController/recuperarProducto');
 const getUsuarios = require('../controllers/getControllers/getUsuarios');
 
