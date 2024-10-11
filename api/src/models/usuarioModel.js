@@ -1,11 +1,10 @@
-// src/models/Usuario.js
 const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
   const Usuario = sequelize.define('Usuario', {
     id: {
       type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4, // Genera un nuevo UUID por defecto
+      defaultValue: DataTypes.UUIDV4,
       allowNull: false,
       primaryKey: true,
     },
@@ -24,7 +23,7 @@ module.exports = (sequelize) => {
     },
     esAdmin: {
       type: DataTypes.BOOLEAN,
-      defaultValue: false, // Por defecto, los usuarios no son administradores
+      defaultValue: false,
     },
   });
 

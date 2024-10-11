@@ -1,12 +1,11 @@
-// src/models/Producto.js
 const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
   const Producto = sequelize.define('Producto', {
     id: {
       type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4, // Genera un UUID por defecto
-      primaryKey: true,                // Establecer como clave primaria
+      defaultValue: DataTypes.UUIDV4,
+      primaryKey: true,
     },
     nombre: {
       type: DataTypes.STRING,
@@ -14,26 +13,25 @@ module.exports = (sequelize) => {
     },
     descripcion: {
       type: DataTypes.TEXT,
-      allowNull: false,
-    },
-    precio: {
-      type: DataTypes.FLOAT,
-      allowNull: false,
+      allowNull: true,
     },
     imagenUrl: {
       type: DataTypes.STRING,
-      allowNull: true,  // Se almacena la URL de la imagen
+      allowNull: true,
     },
-    usuarioId: { // Relación con Usuario
-      type: DataTypes.UUID, // Cambiado a UUID
-      references: {
-        model: 'Usuarios', // Nombre de la tabla
-        key: 'id',         // Campo clave
-      },
+    precio: {
+      type: DataTypes.FLOAT,   // Agregamos el precio al modelo
+      allowNull: true,         // Será null si el producto tiene variaciones
     },
+    stock: {
+      type: DataTypes.INTEGER, // Agregamos el stock al modelo
+      allowNull: true,         // Será null si el producto tiene variaciones
+      defaultValue: 0,
+    }
   }, {
-    paranoid: true,  // Habilitar borrado lógico
-    timestamps: true, // Manejo de createdAt y updatedAt
+    tableName: 'Producto',
+    paranoid: true,
+    timestamps: true,
   });
 
   return Producto;
