@@ -45,4 +45,4 @@ router.put('/productos/recuperar/:id', recuperarProducto);
 router.post('/login', postLogin);
 
 // Exportar el router
-module.exports = router;
+module.exports = router
