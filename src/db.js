@@ -7,7 +7,7 @@ const {
 } = process.env;
 
 // Configuración de la conexión a la base de datos
-const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/diamantina`, {
+const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/desweby`, {
   logging: false,
   native: false,
 });

@@ -21,9 +21,9 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    esAdmin: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: false,
+    rol: {
+      type: DataTypes.ENUM('admin', 'cliente', 'usuario'), // Enumeración de roles permitidos
+      defaultValue: 'usuario', // Valor por defecto
     },
   });
 

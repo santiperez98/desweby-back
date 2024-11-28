@@ -7,13 +7,13 @@ const { Producto, Usuario } = require('../db');
 // Importación de Controllers
 const getProductoById = require('../controllers/getControllers/getProductosById');
 const getProductos = require('../controllers/getControllers/getProductos');
-const postAdmin = require('../controllers/postControllers/postUsuario');
+const postUsuarios = require('../controllers/loginUsuario');
 const postProductos = require('../controllers/postControllers/postProductos');
 const updateProducto = require('../controllers/putController/updateProducto');
 const deleteProducto = require('../controllers/deleteController/deleteProducto');
 const recuperarProducto = require('../controllers/putController/recuperarProducto');
 const getUsuarios = require('../controllers/getControllers/getUsuarios');
-
+const postLogin = require('../controllers/postControllers/postLogin');
 // Crear el router
 const router = Router();
 
@@ -27,7 +27,7 @@ router.get('/productos', getProductos);
 router.get('/productos/:id', getProductoById);
 
 // Ruta para crear el administrador
-router.post('/admin', postAdmin);
+router.post('/usuarios', postUsuarios);
 
 // Ruta para crear un nuevo producto
 router.post('/', postProductos);
@@ -41,7 +41,8 @@ router.delete('/productos/:id', deleteProducto);
 //Ruta para recuperar producto eliminado
 router.put('/productos/recuperar/:id', recuperarProducto);
 
-
+//Ruta para loguearse
+router.post('/login', postLogin);
 
 // Exportar el router
 module.exports = router;
